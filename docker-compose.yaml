@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql/mysql-server:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'testdb'
+      MYSQL_ROOT_PASSWORD: 'test'
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - .db-data:/Users/catalinhalic/Workspace/Learning/Java/mySql/database
+    ports:
+      - '3306:3306'
+volumes:
+  my-datavolume:
