@@ -6,6 +6,7 @@ import com.sda.app.entity.User;
 import com.sda.app.entity.UserRole;
 import com.sda.app.service.UserService;
 import com.sda.app.utils.ApiResponse;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -87,8 +88,7 @@ public class UserController {
         if (optionalUser.isPresent()) {
             User usr = optionalUser.get();
 
-            String encodedPass = encryptPassword(login.getPassword());
-            if (encodedPass.equals(usr.getPassword())) {
+            if (checkPassword(login.getPassword(), usr.getPassword())) {
                 ApiResponse response = new ApiResponse.Builder()
                         .status(200)
                         .message("Utilizator logat cu success")
@@ -136,7 +136,10 @@ public class UserController {
      * @return - encrypted password
      */
     private String encryptPassword(String password) {
-        return password;
-//        return passwordEncoder.encode(password);
+        return BCrypt.hashpw(password, BCrypt.gensalt());
+    }
+
+    private boolean checkPassword(String password, String bdPassword) {
+        return BCrypt.checkpw(password, bdPassword);
     }
 }
