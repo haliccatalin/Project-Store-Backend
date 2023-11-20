@@ -1,10 +1,8 @@
 package com.sda.app.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sda.app.entity.Cart;
 import com.sda.app.entity.Item;
 import com.sda.app.entity.User;
-import com.sda.app.entity.UserRole;
 import com.sda.app.service.CartService;
 import com.sda.app.service.ItemService;
 import com.sda.app.service.UserService;
@@ -14,19 +12,15 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import java.util.*;
 
 @WebMvcTest(CartController.class)
 public class CartControllerTest {
@@ -60,7 +54,7 @@ public class CartControllerTest {
         cart.setItems(items);
 
         List<Cart> cartList = Arrays.asList(
-            cart
+                cart
         );
 
 
@@ -73,5 +67,5 @@ public class CartControllerTest {
 
     }
 
-    
+
 }

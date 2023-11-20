@@ -2,7 +2,6 @@ package com.sda.app.controller;
 
 import com.sda.app.entity.Category;
 import com.sda.app.entity.Item;
-import com.sda.app.entity.User;
 import com.sda.app.service.ItemService;
 import com.sda.app.utils.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class ItemController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse> getItemById(@PathVariable("id")Integer id){
+    public ResponseEntity<ApiResponse> getItemById(@PathVariable("id") Integer id) {
         ApiResponse response = new ApiResponse.Builder()
                 .status(200)
                 .message("Item by ID")

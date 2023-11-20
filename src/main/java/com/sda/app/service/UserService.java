@@ -18,30 +18,34 @@ public class UserService {
     }
 
     public List<User> findAll() {
-       return userRepository.findAll();
+        return userRepository.findAll();
     }
 
-    public Optional<User> findByUsername(String username){
+    public Optional<User> findByUsername(String username) {
         return userRepository.getByUsername(username);
     }
 
-    public Optional<User> findByEmail(String email) { return userRepository.getByEmail(email); }
+    public Optional<User> findByEmail(String email) {
+        return userRepository.getByEmail(email);
+    }
 
-    public Optional<User> findById(Integer id){
+    public Optional<User> findById(Integer id) {
         return userRepository.findById(id);
     }
 
-    public User createUser(User user){
-       return userRepository.save(user);
-    }
-
-    public User updateUser(User user){
+    public User createUser(User user) {
         return userRepository.save(user);
     }
 
-    public void deleteUser(User user){
+    public User updateUser(User user) {
+        return userRepository.save(user);
+    }
+
+    public void deleteUser(User user) {
         userRepository.delete(user);
     }
 
-    public void deleteById(Integer id) { userRepository.deleteById(id);}
+    public void deleteById(Integer id) {
+        userRepository.deleteById(id);
+    }
 }

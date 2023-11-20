@@ -25,8 +25,8 @@ public class CartController {
 
     @GetMapping("/")
     public ResponseEntity<ApiResponse> getAllCarts() {
-           List<Cart> cartList = this.cartService.findAll();
-           ApiResponse response = new ApiResponse.Builder()
+        List<Cart> cartList = this.cartService.findAll();
+        ApiResponse response = new ApiResponse.Builder()
                 .status(200)
                 .message("List de cosuri")
                 .data(cartList)
@@ -41,7 +41,7 @@ public class CartController {
         try {
             Optional<User> optionalUser = this.userService.findById(cartDto.getUserId());
 
-            if(optionalUser.isPresent()) {
+            if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
 
                 Cart cart = new Cart();
@@ -73,7 +73,7 @@ public class CartController {
         try {
             Optional<User> optionalUser = this.userService.findById(cartDto.getUserId());
 
-            if(optionalUser.isPresent()) {
+            if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
 
                 Cart cart = new Cart();

@@ -22,19 +22,19 @@ public class CartService {
         return this.cartRepository.findAll();
     }
 
-    public Optional<Cart> findById(Integer id){
+    public Optional<Cart> findById(Integer id) {
         return cartRepository.findById(id);
     }
 
-    public Cart createCart(Cart cart){
+    public Cart createCart(Cart cart) {
         return cartRepository.save(cart);
     }
 
-    public Cart updateCart(Cart cart){
+    public Cart updateCart(Cart cart) {
         return cartRepository.save(cart);
     }
 
-    public void deleteCart(Cart cart){
+    public void deleteCart(Cart cart) {
         cartRepository.delete(cart);
     }
 

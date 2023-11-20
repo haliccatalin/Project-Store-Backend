@@ -17,19 +17,19 @@ public class ItemService {
         return this.itemRepository.findAll();
     }
 
-    public Optional<Item> getById(Integer id){
+    public Optional<Item> getById(Integer id) {
         return itemRepository.findById(id);
     }
 
-    public Item createItem(Item item){
+    public Item createItem(Item item) {
         return itemRepository.save(item);
     }
 
-    public Item updateItem(Item item){
+    public Item updateItem(Item item) {
         return itemRepository.save(item);
     }
 
-    public void deleteItem(Integer id){
-         itemRepository.deleteById(id);
+    public void deleteItem(Integer id) {
+        itemRepository.deleteById(id);
     }
 }

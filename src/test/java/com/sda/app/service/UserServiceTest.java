@@ -42,7 +42,7 @@ public class UserServiceTest {
 
         // Mock data
         List<User> userList = Arrays.asList(
-                user1,user2
+                user1, user2
         );
 
         // Define the behavior of the repository mock

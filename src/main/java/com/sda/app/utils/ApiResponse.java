@@ -1,7 +1,6 @@
 package com.sda.app.utils;
 
 
-
 public class ApiResponse {
     private int status;
     private String message;
@@ -26,29 +25,30 @@ public class ApiResponse {
         return data;
     }
 
-    public static class Builder{
+    public static class Builder {
         private int status;
         private String message;
         private Object data;
-        public Builder(){
+
+        public Builder() {
         }
 
-        public Builder status(int status){
+        public Builder status(int status) {
             this.status = status;
             return this;
         }
 
-        public Builder message(String message){
+        public Builder message(String message) {
             this.message = message;
             return this;
         }
 
-        public Builder data(Object data){
+        public Builder data(Object data) {
             this.data = data;
             return this;
         }
 
-        public ApiResponse build(){
+        public ApiResponse build() {
             return new ApiResponse(this);
         }
     }
